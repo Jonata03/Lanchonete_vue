@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="http://localhost:8080/favicon.ico">
+    <title>make_your_burger</title>
+  <link href="http://localhost:8080/js/about.js" rel="prefetch"><link href="./make_your_burger_files/app.js.download" rel="preload" as="script"><link href="./make_your_burger_files/chunk-vendors.js.download" rel="preload" as="script"><style type="text/css">
+#nav[data-v-41458b80] {
+    background-color: #222;
+    border-bottom: 4px solid #111;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#nav #logo-url[data-v-41458b80] {
+    margin: auto;
+    margin-left: 0;
+}
+#logo[data-v-41458b80] {
+    width: 40px;
+    height: 40px;
+}
+#nav a[data-v-41458b80] {
+    color: #fcba03;
+    text-decoration: none;
+    margin: 12px;
+    transition: .5s;
+}
+#nav a[data-v-41458b80]:hover {
+    color: #FFF;
+}
+</style><style type="text/css">
+#footer[data-v-40ab164b] {
+    height: 200px;
+    background-color: #222;
+    border-top: 4px solid #111;
+    color: #fcba03;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+}
+</style><style type="text/css">
+* {
+    font-family: Helvetica;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main-container {
+    margin: 50px;
+    min-height: 250px;
+}
+h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #222;
+}
+</style><style type="text/css">
+#main-banner[data-v-a2fea148] {
+    background-image: url('/img/burger.jpg');
+    background-position: 0 -250px;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+#main-banner h1[data-v-a2fea148] {
+    color: #FFF;
+    text-align: center;
+    font-size: 60px;
+    background-color: #222;
+    padding: 20px 40px;
+}
+
+</style><style type="text/css">
+.message-container[data-v-61d2d687] {
+    color: #004085;
+    background-color: #cce5ff;
+    border: 2px solid #b8daff;
+    border-radius: 5px;
+    padding: 10px;
+    max-width: 400px;
+    margin: 30px auto;
+}
+</style><style type="text/css">
+#burger-form[data-v-0a9d5089] {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.input-container[data-v-0a9d5089] {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+label[data-v-0a9d5089] {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;;
+    padding: 5px 10px;
+    border-left: 4px solid #fcba03;
+}
+input[data-v-0a9d5089], select[data-v-0a9d5089] {
+    padding: 5px 10px;
+    width: 300px;
+}
+#opcionais-container[data-v-0a9d5089] {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#opcionais-title[data-v-0a9d5089] {
+    width: 100%;
+}
+.checkbox-container[data-v-0a9d5089] {
+    display: flex;
+    align-items: flex-start;
+    width: 50%;
+    margin-bottom: 20px;
+}
+.checkbox-container span[data-v-0a9d5089],
+  .checkbox-container input[data-v-0a9d5089] {
+    width: auto;
+}
+.checkbox-container span[data-v-0a9d5089] {
+    margin-left: 6px;
+    font-weight: bold;
+}
+.submit-btn[data-v-0a9d5089] {
+    background-color: #222;
+    color:#fcba03;
+    font-weight: bold;
+    border: 2px solid #222;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+}
+.submit-btn[data-v-0a9d5089]:hover {
+    background-color: transparent;
+    color: #222;
+}
+</style></head>
+  <body>
+    <noscript>
+      <strong>We're sorry but make_your_burger doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app" data-v-app=""><div><div data-v-41458b80=""><div id="nav" data-v-41458b80=""><a href="http://localhost:8080/" class="router-link-active router-link-exact-active" id="logo-url" data-v-41458b80="" aria-current="page"><img id="logo" src="./make_your_burger_files/logo.png" alt="Make Your Burger" data-v-41458b80=""></a><a href="http://localhost:8080/" class="router-link-active router-link-exact-active" data-v-41458b80="" aria-current="page">Fazer Pedido</a><a href="http://localhost:8080/pedidos" class="" data-v-41458b80="">Pedidos</a></div></div><div><div><div id="main-banner" data-v-a2fea148=""><h1 data-v-a2fea148="">Make Your Burger</h1></div><div class="main-container"><h1>Monte o seu burger:</h1><div class="message-container" data-v-61d2d687="" data-v-0a9d5089="" style="display: none;"><p data-v-61d2d687=""></p></div><div data-v-0a9d5089=""><form id="burger-form" method="POST" data-v-0a9d5089=""><div class="input-container" data-v-0a9d5089=""><label for="nome" data-v-0a9d5089="">Nome do cliente:</label><input type="text" id="nome" name="nome" placeholder="Digite o seu nome" data-v-0a9d5089=""></div><div class="input-container" data-v-0a9d5089=""><label for="pao" data-v-0a9d5089="">Escolha o pão:</label><select name="pao" id="pao" data-v-0a9d5089=""><option value="" data-v-0a9d5089="">Selecione o seu pão</option></select></div><div class="input-container" data-v-0a9d5089=""><label for="carne" data-v-0a9d5089="">Escolha a carne do seu Burger:</label><select name="carne" id="carne" data-v-0a9d5089=""><option value="" data-v-0a9d5089="">Selecione o tipo de carne</option></select></div><div id="opcionais-container" class="input-container" data-v-0a9d5089=""><label id="opcionais-title" for="opcionais" data-v-0a9d5089="">Selecione os opcionais:</label></div><div class="input-container" data-v-0a9d5089=""><input class="submit-btn" type="submit" value="Criar meu Burger!" data-v-0a9d5089=""></div></form></div></div></div></div><div id="footer" data-v-40ab164b=""><p data-v-40ab164b="">Make Your Burger © 2021</p></div></div></div>
+    <!-- built files will be auto injected -->
+  <script type="text/javascript" src="./make_your_burger_files/chunk-vendors.js.download"></script><script type="text/javascript" src="./make_your_burger_files/app.js.download"></script>
+
+</body></html>
