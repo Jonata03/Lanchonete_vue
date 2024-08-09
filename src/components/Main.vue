@@ -22,7 +22,7 @@
       </div>
     </v-card>
 
-    <v-card class="d-flex align-center mt-3" justify="center">
+    <v-card class="d-flex align-center mt-3" justify="center" wraper>
       <div class="ml-4">
         <v-card-text class="justify-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores corporis debitis

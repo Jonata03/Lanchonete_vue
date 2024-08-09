@@ -1,13 +1,13 @@
 <template>
+
   <Cardapio :lanches="cardapioLanches" :selecionar="true"/>
+
 </template >
 <script>
 export default {
   data() {
     return {
-      lanches: [
 
-      ]
     }
   },
   computed:{
@@ -16,9 +16,8 @@ export default {
     }
   },
   methods:{
-    selecionaLanche(index){
-      indexOf(index)
-    },
+
+
   },
 
 }

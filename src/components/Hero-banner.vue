@@ -4,7 +4,8 @@
     }">
     <v-row no-gutters>
       <v-col cols="12">
-        <v-img src="@/assets/img/img1.jpeg" alt="teste logo"
+        <v-img src="@/assets/img/img1.jpeg"
+               alt="teste logo"
                gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.4)"
                height="500"
                cover

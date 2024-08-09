@@ -58,9 +58,9 @@
       ></v-select>
       <v-card>
         <v-card-title>Total:</v-card-title>
-        <v-card-text >R$: {{ total }}</v-card-text>
+        <v-card-text>R$: {{ total }}</v-card-text>
         <v-card-actions>
-          <v-btn class="border" to="/pedidos" :click="criaPedido">Proximo</v-btn>
+          <v-btn class="border" @click="criaPedido">Proximo</v-btn>
         </v-card-actions>
       </v-card>
     </v-app>
@@ -68,10 +68,12 @@
 </template>
 
 <script>
+import {mapState} from "vuex";
+
 export default {
   data() {
     return {
-      nome:'',
+      nome: '',
       paes: [
         {text: 'Francês', preco: 3},
         {text: 'Americano (hotdog)', preco: 5},
@@ -96,12 +98,12 @@ export default {
       saladasSelecionadas: [],
       carnesSelecionadas: [],
       complementosSelecionados: [],
-      pedido:[]
+      pedido: []
 
     };
-
   },
   computed: {
+    ...mapState(['lanchesSelecionados']),
     totalSaladas() {
       let totalSaladas = 0
       for (let i of this.saladasSelecionadas) {
@@ -128,10 +130,40 @@ export default {
       let totalComplemento = this.totalPrecoComplementos
       let totalSaladas = this.totalSaladas
       let totalPao = this.paoSelecionado
-      console.log(this.complementosSelecionados)
       return totalSaladas + totalCarne + totalComplemento + totalPao
     }
   },
+  methods: {
+    criaPedido() {
+      const nome = this.nome;
+      const pao = this.paes.find(p => p.preco === this.paoSelecionado);
+      const saladas = this.saladasSelecionadas.map(preco => this.saladas.find(s => s.preco === preco).text);
+      const carnes = this.carnesSelecionadas.map(preco => this.carnes.find(c => c.preco === preco).text);
+      const complementos = this.complementosSelecionados.map(preco => this.complementos.find(co => co.preco === preco).text);
+
+      const id = Date.now(); // Usando timestamp como ID simples
+      const precoTotal = this.total;
+
+      const pedido = {
+        id,
+        nome,
+        ingredientes: [...saladas, ...carnes, ...complementos, pao].join(", "),
+        preco: precoTotal,
+        quantidade: 1
+      };
+
+      this.pedido = pedido
+      this.selectItem(this.pedido)
+      console.log(this.pedido);
+      console.log(this.lanchesSelecionados)
+    },
+    selectItem(lanche) {
+      console.log(lanche)
+      this.lanchesSelecionados.push(lanche)
+      // this.alert = true
+      // this.tempoAlerta()
+    }
+  }
 };
 </script>
 
