@@ -1,5 +1,13 @@
 <template>
     <v-container class="pb-15">
+
+<!--      <v-alert class="fixed-alert"-->
+<!--               color="success"-->
+<!--               v-if="alert"-->
+<!--               icon="$success"-->
+<!--               :title="textoAlerta"-->
+<!--               @input="tempoAlerta"-->
+<!--      ></v-alert>-->
       <v-row>
         <h1>Area de pagamento</h1>
         <v-card width="100%">
@@ -16,6 +24,7 @@
 </template>
 <script>
 import {mapState} from "vuex";
+import Alert from "@/components/Alert.vue";
 
 export  default {
   props:{

@@ -1,5 +1,12 @@
 <template>
   <v-container class="pt-16">
+    <v-alert class="fixed-alert"
+             color="success"
+             v-if="alert"
+             icon="$success"
+             title="Lanche montado com sucesso"
+             @input="tempoAlerta"
+    ></v-alert>
     <v-app class="mt-16">
       <p>De um nome para o seu lanche:</p>
       <v-text-field
@@ -60,7 +67,10 @@
         <v-card-title>Total:</v-card-title>
         <v-card-text>R$: {{ total }}</v-card-text>
         <v-card-actions>
-          <v-btn class="border" @click="criaPedido">Proximo</v-btn>
+          <v-btn class="border"
+                 @click="criaPedido"
+
+          >Proximo</v-btn>
         </v-card-actions>
       </v-card>
     </v-app>
@@ -73,6 +83,7 @@ import {mapState} from "vuex";
 export default {
   data() {
     return {
+      alert: false,
       nome: '',
       paes: [
         {text: 'Francês', preco: 3},
@@ -154,18 +165,33 @@ export default {
 
       this.pedido = pedido
       this.selectItem(this.pedido)
-      console.log(this.pedido);
-      console.log(this.lanchesSelecionados)
+      this.alert=true
+      this.tempoAlerta()
     },
     selectItem(lanche) {
       console.log(lanche)
       this.lanchesSelecionados.push(lanche)
       // this.alert = true
       // this.tempoAlerta()
-    }
+    },
+    tempoAlerta(){
+      setTimeout(()=>{
+        this.alert = false
+      },2000)
+    },
   }
 };
 </script>
 
 <style scoped>
+.fixed-alert {
+  position: fixed;
+  top: 5em;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2000;
+  /* Garanta que esteja acima de todos os outros elementos */
+}
+
 </style>

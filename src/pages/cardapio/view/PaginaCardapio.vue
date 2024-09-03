@@ -1,7 +1,8 @@
 <template>
 
-  <Cardapio :lanches="cardapioLanches" :selecionar="true"/>
-
+  <Cardapio :lanches="cardapioLanches"
+            :selecionar="true"
+            textoAlerta="Lanche Adicionado com sucesso"/>
 </template >
 <script>
 export default {

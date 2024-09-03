@@ -4,7 +4,7 @@
              color="success"
              v-if="alert"
              icon="$success"
-             title="lanche escolhido com sucesso"
+             :title="textoAlerta"
              @input="tempoAlerta"
     ></v-alert>
     <v-main class="pa-5 pt-16">
@@ -64,7 +64,8 @@ export default {
     lanches: Array,
     selecionar: Boolean,
     remover: Boolean,
-    quantidade:Boolean
+    quantidade:Boolean,
+    textoAlerta:String
   },
   computed: {
     ...mapState(['cardapioLanches', 'lanchesSelecionados']),
@@ -85,17 +86,16 @@ export default {
       }
     },
     removeItem(lanche) {
-      console.log(lanche)
       // Remove o índice diretamente do array de lanchesSelecionados
       if(lanche.quantidade !== 1 ){
+        this.alert = true
+        this.tempoAlerta()
         lanche.quantidade--
       }else{
+        this.alert = true
+        this.tempoAlerta()
         this.$store.dispatch('removeLanche', lanche.id);
       }
-    },
-    isSelected(index) {
-      // Verifica se o índice está selecionado
-      return this.lanchesSelecionados.includes(index);
     },
     tempoAlerta(){
       setTimeout(()=>{

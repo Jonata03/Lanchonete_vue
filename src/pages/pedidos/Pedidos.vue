@@ -14,6 +14,7 @@
             :remover="true"
             :quantidade="true"
             v-else
+            textoAlerta="Lanche removido com sucesso"
   />
   <Pagamento :lanches="lanchesSelecionados"/>
 </template>
